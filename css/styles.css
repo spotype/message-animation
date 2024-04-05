@@ -1,0 +1,101 @@
+/* ------------ VARIABLES ------------ */
+:root {
+  /* COLORS */
+  --color: #9176ff;
+}
+
+/* ------------ BASE ------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-color: var(--color);
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+/* ----------- MENU -------------- */
+.menu {
+  width: 5em;
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 3.5rem;
+  bottom: 4rem;
+  position: fixed;
+  z-index: 999;
+}
+
+.menu__items {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu__item {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.menu__item a {
+  color: var(--color);
+  font-size: 2rem;
+}
+
+.menu__wrapper {
+  position: absolute;
+  z-index: 1;
+  font-size: 3.5rem;
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  color: var(--color);
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.menu__wrapper.active {
+  transform: rotate(225deg);
+}
+
+.menu__wrapper.active ~ .menu__items .menu__item:nth-child(1) {
+  transform: translate(0, -6em);
+}
+
+.menu__wrapper.active ~ .menu__items .menu__item:nth-child(2) {
+  transform: translate(0, -11em);
+}
+
+.menu__wrapper.active ~ .menu__items .menu__item:nth-child(3) {
+  transform: translate(0, -16em);
+}
+
+.menu__wrapper.active ~ .menu__items .menu__item:nth-child(4) {
+  transform: translate(0, -21em);
+}
